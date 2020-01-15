@@ -1,0 +1,20 @@
+<h1>Subjects</h1>
+
+<p>A list of all the existing subjects.</p>
+
+<p *ngIf="!subjects"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="subjects">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="clickable" *ngFor="let subject of subjects" (click)="onSelect(subject)">
+      <td>{{ subject.name }}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<app-subject-detail *ngIf="selectedSubject" [subject]="selectedSubject"></app-subject-detail>

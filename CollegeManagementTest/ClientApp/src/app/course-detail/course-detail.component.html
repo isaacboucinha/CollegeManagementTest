@@ -1,0 +1,32 @@
+<h3>{{ course.name }}</h3>
+<h4>Subjects</h4>
+<table class='table table-striped' *ngIf="course.subjects">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Teacher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subject of course.subjects">
+      <td>{{ subject.name }}</td>
+      <td>{{ subject.teacher.name }}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<h4>Students</h4>
+<table class='table table-striped' *ngIf="course.students">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Average</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of course.students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.gradeAverage }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+<h1>Students</h1>
+
+<p>A list of all the students currently enrolled.</p>
+
+<p *ngIf="!students"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="students">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Registration Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="clickable" *ngFor="let student of students" (click)="onSelect(student)">
+      <td>{{ student.name }}</td>
+      <td>{{ student.birthday }}</td>
+      <td>{{ student.registrationNumber }}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<app-student-detail *ngIf="selectedStudent" [student]="selectedStudent"></app-student-detail>
