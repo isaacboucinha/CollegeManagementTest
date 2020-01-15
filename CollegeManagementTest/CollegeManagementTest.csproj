@@ -25,42 +25,17 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\models\**" />
+    <Compile Remove="Migrations\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\models\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="ClientApp\src\models\**" />
+    <EmbeddedResource Remove="Migrations\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\models\**" />
+    <None Remove="Migrations\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Migrations\20200104013135_InitialMigration.cs" />
-    <Compile Remove="Migrations\20200104013135_InitialMigration.Designer.cs" />
-    <Compile Remove="Migrations\20200104013414_InitialMigration.cs" />
-    <Compile Remove="Migrations\20200104013414_InitialMigration.Designer.cs" />
-    <Compile Remove="Migrations\20200104181330_InitialMigration.cs" />
-    <Compile Remove="Migrations\20200104181330_InitialMigration.Designer.cs" />
-    <Compile Remove="Migrations\20200105162419_InitialMigration.cs" />
-    <Compile Remove="Migrations\20200105162419_InitialMigration.Designer.cs" />
-    <Compile Remove="Migrations\20200106212311_InitialMigration.cs" />
-    <Compile Remove="Migrations\20200106212311_InitialMigration.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="ClientApp\src\models\Course.ts" />
-    <None Remove="ClientApp\src\models\Grade.ts" />
-    <None Remove="ClientApp\src\models\Student.ts" />
-    <None Remove="ClientApp\src\models\Subject.ts" />
-    <None Remove="ClientApp\src\models\Teacher.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\models\Course.ts" />
-    <TypeScriptCompile Include="ClientApp\src\models\Grade.ts" />
-    <TypeScriptCompile Include="ClientApp\src\models\Student.ts" />
-    <TypeScriptCompile Include="ClientApp\src\models\Subject.ts" />
-    <TypeScriptCompile Include="ClientApp\src\models\Teacher.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
