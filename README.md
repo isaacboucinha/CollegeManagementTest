@@ -1,4 +1,3 @@
-# CollegeManagementTest
 An interview test I did.
 # Specifications
 Create a college management system which must be able to keep the registration of courses, subjects, teachers and students of a university. Each college course must have multiple subjects, which in turn, contain one teacher and many students. Furthermore, the system must store the name, birthday, and salary of teachers. For the students it must save the name, birthday, registration number and the students grade in the subjects enrolled.
