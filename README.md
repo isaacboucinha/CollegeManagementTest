@@ -13,7 +13,7 @@ Create a college management system which must be able to keep the registration o
 * AngularJS
 * SignalR
 ## The ER model I came up with
-For convenience, Grades are the N-to-N table for the Student-Subject relationship.
+For convenience, Grades are the N-to-N table for the Student-Subject relationship. This diagram was done using [ERDPlus](https://erdplus.com/).
 ![](ER.png)
 ## Additional notes
 The boilerplate-branch has a boilerplate version for the whole project.
