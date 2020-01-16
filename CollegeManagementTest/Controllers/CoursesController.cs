@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CollegeManagementTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,10 +13,10 @@ namespace CollegeManagementTest.Controllers
     public class CoursesController : Controller
     {
 
-        private readonly ILogger<WeatherForecastController> logger;
+        private readonly ILogger<CoursesController> logger;
         private readonly CollegeManagementContext context;
 
-        public CoursesController(CollegeManagementContext context, ILogger<WeatherForecastController> logger)
+        public CoursesController(CollegeManagementContext context, ILogger<CoursesController> logger)
         {
             this.context = context;
             this.logger = logger;
@@ -26,7 +25,7 @@ namespace CollegeManagementTest.Controllers
         [HttpPost("{id}")]
         public Course CreateCourse(long id)
         {
-            return context.Course.First();
+            throw new NotImplementedException();
         }
 
         [HttpGet("")]
@@ -51,6 +50,10 @@ namespace CollegeManagementTest.Controllers
                                              Name = subject.Teacher.Name
                                          }
                                      },
+
+                          //this next query should be an sql stored procedure
+                          //but to avoid creating literal sp string in migration file, it's done in linq
+                          //the sql query version is in the TestQuery file in the Query folder
                           Students = (from student in context.Student
                                       join grade in context.Grade
                                       on student.Id equals grade.Student.Id
@@ -112,20 +115,19 @@ namespace CollegeManagementTest.Controllers
         [HttpGet("{id}")]
         public Course GetCourse(long id)
         {
-            return context.Course.Find(id);
+            throw new NotImplementedException();
         }
 
         [HttpPut("{id}")]
-        public Course Update()
+        public Course UpdateCourse(long id)
         {
-            return context.Course.First();
+            throw new NotImplementedException();
         }
 
         [HttpDelete("{id}")]
-        public bool Delete(long id)
+        public bool DeleteCourse(long id)
         {
-            context.Course.Remove(context.Course.Find(id));
-            return false;
+            throw new NotImplementedException();
         }
     }
 }

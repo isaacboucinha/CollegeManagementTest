@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CollegeManagementTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 using CollegeManagementTest.Models.DTO;
 
 namespace CollegeManagementTest.Controllers
@@ -14,10 +12,10 @@ namespace CollegeManagementTest.Controllers
     public class StudentsController : Controller
     {
 
-        private readonly ILogger<WeatherForecastController> logger;
+        private readonly ILogger<StudentsController> logger;
         private readonly CollegeManagementContext context;
 
-        public StudentsController(CollegeManagementContext context, ILogger<WeatherForecastController> logger)
+        public StudentsController(CollegeManagementContext context, ILogger<StudentsController> logger)
         {
             this.context = context;
             this.logger = logger;
@@ -26,7 +24,7 @@ namespace CollegeManagementTest.Controllers
         [HttpPost("{id}")]
         public Student CreateStudent(long id)
         {
-            return context.Student.First();
+            throw new NotImplementedException();
         }
 
         [HttpGet("")]
@@ -57,20 +55,19 @@ namespace CollegeManagementTest.Controllers
         [HttpGet("{id}")]
         public Student GetStudent(long id)
         {
-            return context.Student.Find(id);
+            throw new NotImplementedException();
         }
 
         [HttpPut("{id}")]
-        public Student Update()
+        public Student UpdateStudent(long id)
         {
-            return context.Student.First();
+            throw new NotImplementedException();
         }
 
         [HttpDelete("{id}")]
-        public bool Delete(long id)
+        public bool DeleteStudent(long id)
         {
-            context.Student.Remove(context.Student.Find(id));
-            return false;
+            throw new NotImplementedException();
         }
     }
 }

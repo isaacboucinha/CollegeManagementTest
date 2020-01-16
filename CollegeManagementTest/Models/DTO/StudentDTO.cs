@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace CollegeManagementTest.Models.DTO
     public class StudentDTO : IEquatable<StudentDTO>
     {
         public string Name { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
         public long RegistrationNumber { get; set; }
 

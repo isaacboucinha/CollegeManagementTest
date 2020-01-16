@@ -1,15 +1,10 @@
-using CollegeManagementTest.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
-using System;
 
 namespace CollegeManagementTest
 {
@@ -34,6 +29,11 @@ namespace CollegeManagementTest
 
             services.AddDbContext<CollegeManagementContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("CollegeManagementDatabase")));
+
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
